@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="balloons" id="balloons" aria-hidden="true"></div>
+
+<!-- Welcome screen -->
+<section id="welcome" class="welcome">
+  <p class="welcome-sub">✨ A little something just for you ✨</p>
+  <h1>Something Special Is Waiting For You...</h1>
+  <button id="openBtn" class="btn pulse" type="button">Open Your Surprise 🎁</button>
+</section>
+
+<!-- Main celebration -->
+<main id="main" class="main" hidden>
+  <header class="hero">
+    <h1 id="title" class="title seq" style="--d:0" aria-label="HAPPY BIRTHDAY!"></h1>
+    <div class="photo-wrap seq" style="--d:3">
+      <div class="ring r1"></div><div class="ring r2"></div>
+      <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span><span class="spark s4">♥</span>
+      <div class="photo"><div class="photo-in">
+        <img id="photo" alt="Imran Ali Babar" src="Mamo.jpg"/>
+        <div id="photoFallback" class="fallback" hidden></div>
+      </div></div>
+    </div>
+    <h2 id="greeting" class="greeting seq" style="--d:5"></h2>
+    <p id="age" class="age seq" style="--d:5" hidden></p>
+    <p id="message" class="message seq" style="--d:6"></p>
+    <div class="actions seq" style="--d:7">
+      <button id="letterBtn" class="btn" type="button">A Special Message for You 💌</button>
+      <button id="celebrateBtn" class="btn ghost" type="button">Let's Celebrate! 🎉</button>
+    </div>
+  </header>
+
+  <section class="panel reveal">
+    <h2>Birthday Wishes</h2>
+    <div id="wishes" class="wishes"></div>
+  </section>
+
+  <section class="panel reveal cake-panel">
+    <h2>Make a Wish</h2>
+    <svg id="cake" class="cake" viewBox="0 0 200 190" role="img" aria-label="Birthday cake with three candles">
+      <ellipse cx="100" cy="177" rx="92" ry="10" fill="rgba(0,0,0,.35)"/>
+      <rect x="28" y="118" width="144" height="54" rx="12" fill="#ff7eb6"/>
+      <rect x="28" y="118" width="144" height="15" rx="7" fill="#fff"/>
+      <circle cx="55" cy="150" r="4" fill="#f5d27a"/><circle cx="100" cy="154" r="4" fill="#f5d27a"/><circle cx="145" cy="150" r="4" fill="#f5d27a"/>
+      <rect x="50" y="78" width="100" height="42" rx="10" fill="#a98bff"/>
+      <rect x="50" y="78" width="100" height="12" rx="6" fill="#fff"/>
+      <g fill="#f5d27a"><rect x="72" y="50" width="6" height="28" rx="2"/><rect x="97" y="50" width="6" height="28" rx="2"/><rect x="122" y="50" width="6" height="28" rx="2"/></g>
+      <g fill="#ffb347"><ellipse class="flame" cx="75" cy="41" rx="5" ry="9"/><ellipse class="flame f2" cx="100" cy="41" rx="5" ry="9"/><ellipse class="flame f3" cx="125" cy="41" rx="5" ry="9"/></g>
+    </svg>
+    <button id="wishBtn" class="btn" type="button">Make a Wish ✨</button>
+  </section>
+
+  <section id="gallery" class="panel reveal" hidden>
+    <h2>Memories</h2>
+    <div id="galleryGrid" class="grid"></div>
+  </section>
+
+  <footer class="footer">Made with love 💖</footer>
+</main>
+
+<div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+  <div class="letter">
+    <button id="closeBtn" class="close" type="button" aria-label="Close message">×</button>
+    <h3 id="letterTitle">💌 For You</h3>
+    <p id="letterText" class="letter-text"></p>
+  </div>
+</div>
+
+<div id="banner" class="banner" hidden></div>
+<button id="musicBtn" class="music" type="button" aria-label="Toggle background music" aria-pressed="false" hidden>🎵</button>
+<div id="toast" class="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
